@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Sidebar from "./components/Sidebar";
+import Menu from "./components/Menu";
+import Food from "./components/Food";
+import About from "./components/About";
+import Footer from "./components/Footer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends Component {
+  state = {};
+  render() {
+    return (
+      <React.Fragment>
+        <Sidebar />
+        <Menu />
+        <div
+          class="w3-main w3-content w3-padding"
+          style={{ maxWidth: "1200px", marginTop: "100px" }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <Food />
+          <About />
+          <Footer />
+        </div>
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
